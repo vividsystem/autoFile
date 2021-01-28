@@ -1,0 +1,18 @@
+{
+  "origins": ["/Users/mateostiller/Downloads/"],
+  "file_extensions": {
+    "pictures": {
+      "endings": [".jpeg", ".png", ".jpg"],
+      "destination": "~/Pictures/",
+      "addDate": true
+    }
+
+  },
+  "filestarts": {
+    "school": {
+      "directory": "/Users/mateostiller/Documents/school/",
+      "starts": ["Biologie", "Chinesisch", "Deutsch", "Englisch", "Erdkunde", "Informatik", "Kunst", "Latein", "Mathematik", "Musik", "Physik", "Politik", "Religion"],
+      "addDate": true
+    }
+  }
+}
