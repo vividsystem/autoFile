@@ -5,7 +5,7 @@ from time import sleep, ctime, strptime, strftime
 from json import load
 from threading import Thread
 
-config = load(open('/Users/mateostiller/Developer/Code/Projects/Automation/autofile/config.json'))
+
 
 homedir = getenv('HOME')
 
@@ -16,6 +16,7 @@ parsedconfig = {
 }
 
 def load_config():
+  config = load(open(homedir+'.config/autofile/'))
   for i in config["origins"]:
     parsedconfig["origins"].append(i)
   for val in config:
