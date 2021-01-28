@@ -4,7 +4,7 @@ from os import listdir, rename, path, system, getenv
 from time import sleep, ctime, strptime, strftime
 from json import load
 from threading import Thread
-
+import funcs import call_plugin, arg
 
 
 homedir = getenv('HOME')
@@ -14,6 +14,7 @@ parsedconfig = {
   "file_ext": {},
   "filestarts": {}
 }
+
 
 def load_config():
   config = load(open(homedir+'.config/autofile/'))
@@ -92,4 +93,6 @@ def mover():
               #print(dest)
 
 if __name__ == "__main__":
-  load_config()
+  #  load_config()
+  #call_plugin("backup", 1234)
+  print(backup.arg)
