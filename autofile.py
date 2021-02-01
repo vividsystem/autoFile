@@ -1,7 +1,7 @@
 from sys import argv
 from os import listdir
 from funcs import load_config, mover
-from args import ArgParser
+
 
 parsedconfig = {
   "origins": [],
@@ -9,14 +9,12 @@ parsedconfig = {
   "filestarts": {}
 }
 
-args = {}
+args = {"-r"}
 
 def handler():
-  parser = ArgParser(argv, description='Managing your files like a god.', prog="File managment programm", prefix="-")
-  args = parser.parse_args()
-  load_config(parsedconfig)
-  run()
-
+  for arg in args:
+    if arg in argv:
+      print(arg)
 def run():
   while True:
     mover(parsedconfig)
