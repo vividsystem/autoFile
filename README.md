@@ -13,12 +13,12 @@ git clone https://github.com/vividsystem/autofile.git
 ## Usage
 
 ```python
-python3 runner.py
+python3 autofile.py
 ```
 
 ## Customization & Mods
-For further customization modify your config file in `~/.config/autofile/`
-The default config.yaml(in config/) can be copied in to the
+For further customization modify your config file in `~/.config/autofile`
+The defaults can be found in `defaults/`
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
