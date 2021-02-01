@@ -1,0 +1,18 @@
+origins:
+  #the directories where files are searched for.
+file_extensions:
+  #pictures:
+  #  endings:
+  #  - ".jpeg"
+  #  - ".png"
+  #  - ".jpg"
+  #  destination: "~/Pictures/"
+  #  addDate: true
+filestarts:
+  #documents:
+  #  directory: "~/Documents/"
+  #  starts:
+  #  - private
+  #  - school
+  #  - someotherthing
+  #  addDate: true
