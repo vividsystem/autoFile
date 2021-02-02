@@ -9,12 +9,10 @@ parsedconfig = {
   "filestarts": {}
 }
 
-args = {"-r"}
+args = {}
 
 def handler():
-  for arg in args:
-    if arg in argv:
-      print(arg)
+  return
 def run():
   while True:
     mover(parsedconfig)

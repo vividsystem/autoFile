@@ -9,7 +9,6 @@ def ctime_get(filepath):
   formated_time = strftime("%Y-%m-%d_", conv)
   return formated_time
 
-
 def load_config(parsedconfig, *args, **kwargs):
 
   #loads the yaml config file
@@ -58,7 +57,6 @@ def load_config(parsedconfig, *args, **kwargs):
       except:
         return
 
-
 def mover(parsedconfig):
     #looping trough the directory where the code is supposed to look after files
     for origin in parsedconfig["origins"]:
@@ -94,4 +92,3 @@ def mover(parsedconfig):
               dest = parsedconfig["filestarts"][i][0].replace('~', homedir)+thing
               rename(path, dest)
               #print(dest)
-
