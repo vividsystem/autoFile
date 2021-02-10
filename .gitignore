@@ -144,3 +144,4 @@ dmypy.json
 
 #custom things
 plugins/**
+area51.py

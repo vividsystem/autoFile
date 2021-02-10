@@ -1,15 +1,22 @@
 from yaml import load, FullLoader
 from time import ctime, strptime, strftime
-from os import path, listdir, getenv
+from os import path, listdir, getenv, rename
 from importlib import import_module
 homedir = getenv("HOME")
 
+#-----------------------------------
+#some funcs
+#-----------------------------------
 def ctime_get(filepath):
   creation_time = ctime(path.getctime(filepath))
   conv = strptime(creation_time,"%a %b %d %H:%M:%S %Y")
   formated_time = strftime("%Y-%m-%d_", conv)
   return formated_time
 
+
+#----------------------------------
+# Config and Plugin Loader
+#----------------------------------
 def load_config(parsedconfig, *args, **kwargs):
 
   #loads the yaml config file
@@ -59,14 +66,20 @@ def load_config(parsedconfig, *args, **kwargs):
         return
 
 def load_plugins(path="/Users/mateostiller/Developer/Code/Projects/autoFile/plugins"):
+  args = {}
   for filename in listdir(path):
     if filename != "__init__.py" and filename != "__pycache__":
       plugin_import = import_module("plugins."+filename.split(".")[0])
-      
-      print(plugin_import.args)
-      print(f"Imported {filename}")
+      for arg_group in plugin_import.args:
+        args[arg_group] = plugin_import.args[arg_group]
+        print(args[arg_group])
+      print(f"Imported {filename.strip('.py')}")
+  del plugin_import
+  return args
 
-
+#----------------------------------
+# The main thing: the file mover
+#----------------------------------
 def mover(parsedconfig):
     #looping trough the directory where the code is supposed to look after files
     for origin in parsedconfig["origins"]:

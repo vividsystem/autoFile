@@ -1,6 +1,6 @@
 from sys import argv
 from os import listdir
-from funcs import load_config, mover, load_plugins
+from utils import load_config, mover, load_plugins
 
 parsedconfig = {
   "origins": [],
