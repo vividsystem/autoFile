@@ -1,7 +1,6 @@
 from sys import argv
 from os import listdir
-from funcs import load_config, mover
-
+from funcs import load_config, mover, load_plugins
 
 parsedconfig = {
   "origins": [],
@@ -11,8 +10,10 @@ parsedconfig = {
 
 args = {}
 
-def handler():
-  return
+def main():
+  load_plugins()
+  #load_config(parsedconfig)
+  #run()
 def run():
   while True:
     mover(parsedconfig)
@@ -21,4 +22,4 @@ def debug_run():
   return
 
 if __name__ == "__main__":
-  handler()
+  main()

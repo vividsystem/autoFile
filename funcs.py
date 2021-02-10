@@ -1,6 +1,7 @@
 from yaml import load, FullLoader
 from time import ctime, strptime, strftime
-from os import listdir, rename, getenv, path
+from os import path, listdir, getenv
+from importlib import import_module
 homedir = getenv("HOME")
 
 def ctime_get(filepath):
@@ -56,6 +57,15 @@ def load_config(parsedconfig, *args, **kwargs):
             parsedconfig["filestarts"][i].append(config["filestarts"][start]["addDate"])
       except:
         return
+
+def load_plugins(path="/Users/mateostiller/Developer/Code/Projects/autoFile/plugins"):
+  for filename in listdir(path):
+    if filename != "__init__.py" and filename != "__pycache__":
+      plugin_import = import_module("plugins."+filename.split(".")[0])
+      
+      print(plugin_import.args)
+      print(f"Imported {filename}")
+
 
 def mover(parsedconfig):
     #looping trough the directory where the code is supposed to look after files
