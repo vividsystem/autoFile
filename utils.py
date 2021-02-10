@@ -65,17 +65,21 @@ def load_config(parsedconfig, *args, **kwargs):
       except:
         return
 
+
+
+
 def load_plugins(path="/Users/mateostiller/Developer/Code/Projects/autoFile/plugins"):
   args = {}
+  plugins = {}
   for filename in listdir(path):
     if filename != "__init__.py" and filename != "__pycache__":
       plugin_import = import_module("plugins."+filename.split(".")[0])
       for arg_group in plugin_import.args:
         args[arg_group] = plugin_import.args[arg_group]
         print(args[arg_group])
-      print(f"Imported {filename.strip('.py')}")
-  del plugin_import
-  return args
+      print(f"Imported {filename.split('.')[0]}")
+      plugins[filename.split(".")[0]] = plugin_import
+  return plugins, args
 
 #----------------------------------
 # The main thing: the file mover

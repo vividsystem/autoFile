@@ -8,16 +8,14 @@ parsedconfig = {
   "filestarts": {}
 }
 
+plugins = {}
 args = {}
 
 def main():
-  load_plugins()
-  #load_config(parsedconfig)
-  #run()
-def run():
-  while True:
-    mover(parsedconfig)
-    
+  plugins, args = load_plugins()
+  load_config()
+  
+
 def debug_run():
   return
 
