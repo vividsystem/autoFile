@@ -37,8 +37,7 @@ def load_config(parsedconfig, *args, **kwargs):
 
             # making path var for ease of use
             path = config["file_extensions"][extension]["destination"]
-            if path.endswith('/') == False:
-              path += '/'
+            path = path+'/' if path.endswith('/') == False else path
 
             #append the easier model of the config
             parsedconfig["file_ext"][i] = []
@@ -55,8 +54,7 @@ def load_config(parsedconfig, *args, **kwargs):
             
             #making path var for ease of use
             path = config["filestarts"][start]["directory"]+i
-            if path.endswith('/') == False:
-              path += '/'
+            path = path+'/' if path.endswith('/') == False else path
 
             #append the easier model of the config
             parsedconfig["filestarts"][i] = []
@@ -68,7 +66,7 @@ def load_config(parsedconfig, *args, **kwargs):
 
 
 
-def load_plugins(path="/Users/mateostiller/Developer/Code/Projects/autoFile/plugins"):
+def load_plugins(path=getenv("HOME")+"/.config/autofile/plugins"):
   args = {}
   plugins = {}
   for filename in listdir(path):

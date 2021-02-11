@@ -13,6 +13,5 @@ filestarts:
   #  directory: "~/Documents/"
   #  starts:
   #  - private
-  #  - school
   #  - someotherthing
   #  addDate: true

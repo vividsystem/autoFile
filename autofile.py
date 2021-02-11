@@ -12,9 +12,10 @@ plugins = {}
 args = {}
 
 def main():
-  plugins, args = load_plugins()
-  load_config()
-  
+  #plugins, args = load_plugins()
+  load_config(parsedconfig)
+  while True:
+    mover(parsedconfig)
 
 def debug_run():
   return
