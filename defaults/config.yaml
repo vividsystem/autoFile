@@ -1,4 +1,4 @@
-project_dir: "" #the place to your autofile repo
+config_dir: "" #the place to your autofile repo -> the default = ~/.config/autofile
 origins:
   #the directories where files are searched for.
 file_extensions:
