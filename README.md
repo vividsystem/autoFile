@@ -14,10 +14,11 @@ git clone https://github.com/vividsystem/autofile.git
 
 ```bash
 usage:
-  python3 autofile.py
+  python3 autofile.py 
+  python3 autofile.py update  Update your autofile repo
 Options:
-  -h --help             Show this thing.
-  -p --plugin <plugin>  Run a plugin
+  -h --help                   Show this thing.
+  -p --plugin <plugin>        Run a plugin
 ```
 
 ## Customization & Mods
