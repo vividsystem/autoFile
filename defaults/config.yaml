@@ -19,6 +19,6 @@ filestarts:
 plugins:
   backup:
     dotfiles:
-      files:
+      files: #directories also work
         - "~/.config/autofile/config.yaml"
       backup_directory: "~/dotfiles/"

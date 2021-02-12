@@ -20,8 +20,8 @@ def main():
         print(repo_dir+"plugins/")
         plugin = load_specific_plugin(plugin_name,repo_dir+"plugins/")
         plugin.main()
-    else:
-        raise Exception("No Value specified for -m")
+      else:
+        raise ValueError("No Value specified for -m")
   if "update" in argv:
     system("git pull")
       
