@@ -1,4 +1,4 @@
-config_dir: "" #the place to your autofile repo -> the default = ~/.config/autofile
+# ~/.config/autofile
 origins:
   #the directories where files are searched for.
 file_extensions:
@@ -16,3 +16,9 @@ filestarts:
   #  - private
   #  - someotherthing
   #  addDate: true
+plugins:
+  backup:
+    dotfiles:
+      files:
+        - "~/.config/autofile/config.yaml"
+      backup_directory: "~/dotfiles/"

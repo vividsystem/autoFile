@@ -65,19 +65,19 @@ def load_config(parsedconfig, *args, **kwargs):
 
 
 
+# loading and using a specific plugin
 
-def load_plugins(path):
-  args = {}
-  plugins = {}
-  for filename in listdir(path):
-    if filename != "__init__.py" and filename != "__pycache__":
-      plugin_import = import_module("plugins."+filename.split(".")[0])
-      for arg_group in plugin_import.args:
-        args[arg_group] = plugin_import.args[arg_group]
-        print(args[arg_group])
-      print(f"Imported {filename.split('.')[0]}")
-      plugins[filename.split(".")[0]] = plugin_import
-  return plugins, args
+def load_specific_plugin(plugin_name, plugin_path):
+  if plugin_name+".py" in listdir(plugin_path):
+    if plugin_name != "__init__" and plugin_name != "__pycache__":
+      plugin = import_module("plugins."+plugin_name)
+      return plugin
+    else:
+      raise ValueError("Plugin not valid")
+  else:
+    raise ValueError("Plugin does not exist")
+
+
 
 #----------------------------------
 # The main thing: the file mover
