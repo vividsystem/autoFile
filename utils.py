@@ -66,7 +66,7 @@ def load_config(parsedconfig, *args, **kwargs):
 
 
 
-def load_plugins(path=getenv("HOME")+"/.config/autofile/plugins"):
+def load_plugins(path):
   args = {}
   plugins = {}
   for filename in listdir(path):

@@ -1,3 +1,4 @@
+project_dir: "" #the place to your autofile repo
 origins:
   #the directories where files are searched for.
 file_extensions:
