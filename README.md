@@ -12,8 +12,12 @@ git clone https://github.com/vividsystem/autofile.git
 
 ## Usage
 
-```python
-python3 autofile.py
+```bash
+usage:
+  python3 autofile.py
+Options:
+  -h --help             Show this thing.
+  -p --plugin <plugin>  Run a plugin
 ```
 
 ## Customization & Mods
