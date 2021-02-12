@@ -14,7 +14,7 @@ homedir = getenv("HOME")
 repo_dir = getcwd()+'/'+__file__.strip("autofile.py") if __file__.startswith(homedir) == False else __file__.strip("autofile.py")
 def main():
   for index_number in range(len(argv)):
-    if argv[index_number] == "-m":
+    if argv[index_number] == "-p" or argv[index_number] == "--plugin":
       if index_number+1 <= len(argv)-1:
         plugin_name = argv[index_number+1]
         print(repo_dir+"plugins/")
