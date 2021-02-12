@@ -9,5 +9,5 @@ def main():
       file_to_backup = file_to_backup.replace('~', homedir)
       dest = config["plugins"]["backup"][group]["backup_directory"].replace('~', homedir)
       if path.exists(dest) != False:
-        system("mkdir "+dest)
+        system("mkdir -p "+dest)
       system("cp -R "+file_to_backup+" "+dest)
